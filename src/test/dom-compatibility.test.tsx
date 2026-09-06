@@ -73,5 +73,12 @@ describe("DOM compatibility boundary", () => {
     unmount();
 
     expect(vi.getTimerCount()).toBe(0);
+
+    render(<DelayedStatus />);
+    expect(vi.getTimerCount()).toBe(1);
+
+    cleanup();
+
+    expect(vi.getTimerCount()).toBe(0);
   });
 });
