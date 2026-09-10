@@ -29,9 +29,11 @@ export function BookingReference() {
   const [journey, setJourney] = useState<Journey>("guest");
   const [service, setService] = useState<ServiceId>(services[0].id);
   const [slot, setSlot] = useState(slots[1]);
+  const [date, setDate] = useState("2026-09-21");
   const [previewState, setPreviewState] = useState<PreviewState>("ready");
 
-  const selectedService = services.find((item) => item.id === service) ?? services[0];\n  const formattedDate = new Intl.DateTimeFormat("en-ZA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
+  const selectedService = services.find((item) => item.id === service) ?? services[0];
+  const formattedDate = new Intl.DateTimeFormat("en-ZA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
 
   return (
     <section className="booking-reference">
@@ -174,7 +176,10 @@ export function BookingReference() {
           </dl>
 
           <div className={`booking-reference__state booking-reference__state--${previewState}`}>
-                        <>\n              <strong>{previewCopy[previewState].title}</strong>\n              <p>{previewCopy[previewState].body}</p>\n            </>}
+                        <>
+              <strong>{previewCopy[previewState].title}</strong>
+              <p>{previewCopy[previewState].body}</p>
+            </>}
           </div>
 
           <div className="booking-reference__state-controls" aria-label="Reference state previews">
