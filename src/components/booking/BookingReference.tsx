@@ -6,6 +6,7 @@ import "./booking-reference.css";
 
 type Journey = "guest" | "account";
 type PreviewState = "ready" | "loading" | "empty" | "conflict" | "error" | "success";
+type ServiceId = (typeof services)[number]["id"];
 
 const services = [
   { id: "recovery", name: "Massage & recovery", detail: "A calm, guided session for recovery and restoration." },
@@ -17,7 +18,7 @@ const slots = ["09:00", "10:30", "13:00", "15:30"];
 
 export function BookingReference() {
   const [journey, setJourney] = useState<Journey>("guest");
-  const [service, setService] = useState(services[0].id);
+  const [service, setService] = useState<ServiceId>(services[0].id);
   const [slot, setSlot] = useState(slots[1]);
   const [previewState, setPreviewState] = useState<PreviewState>("ready");
 
