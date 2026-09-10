@@ -1,0 +1,25 @@
+.auth-panel {
+  display: grid; gap: 1.5rem; max-width: 42rem; margin: 0 auto; padding: clamp(1.5rem, 5vw, 4rem);
+  border: 1px solid rgba(82, 57, 39, 0.16); border-radius: 1.5rem;
+  background: linear-gradient(145deg, rgba(250, 247, 240, 0.98), rgba(239, 231, 215, 0.92));
+  box-shadow: 0 1.5rem 4rem rgba(57, 39, 25, 0.12);
+}
+.auth-panel__intro { display: grid; gap: 0.7rem; }
+.auth-panel__eyebrow { margin: 0; color: #9b6b3c; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.auth-panel h1 { margin: 0; color: #33241c; font-family: Georgia, serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.03; }
+.auth-panel__intro p:last-child { max-width: 36rem; margin: 0; color: #685345; line-height: 1.7; }
+.auth-panel__form { display: grid; gap: 1rem; }
+.auth-panel__form label { display: grid; gap: 0.45rem; color: #4d392c; font-size: 0.9rem; font-weight: 700; }
+.auth-panel__form input { min-height: 3rem; padding: 0.75rem 0.85rem; border: 1px solid rgba(82, 57, 39, 0.28); border-radius: 0.7rem; background: #fffdf8; color: #2e2119; font: inherit; }
+.auth-panel__form input:focus-visible, .auth-panel button:focus-visible { outline: 3px solid #d2a65a; outline-offset: 3px; }
+.auth-panel__button { min-height: 3.2rem; border: 0; border-radius: 999px; background: #413425; color: #fffaf2; cursor: pointer; font: inherit; font-weight: 700; }
+.auth-panel__button:disabled { cursor: wait; opacity: 0.65; }
+.auth-panel__links { display: flex; flex-wrap: wrap; gap: 1rem; }
+.auth-panel__links button { padding: 0; border: 0; background: transparent; color: #8a5c32; cursor: pointer; font: inherit; text-decoration: underline; }
+.auth-panel__message, .auth-panel__error { margin: 0; padding: 0.8rem 1rem; border-radius: 0.65rem; line-height: 1.5; }
+.auth-panel__message { background: #e4f0e4; color: #245a35; }
+.auth-panel__error { background: #f9e3dc; color: #8b3021; }
+.auth-panel__signed-in { display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid rgba(47, 112, 67, 0.22); border-radius: 0.8rem; background: rgba(228, 240, 228, 0.7); color: #245a35; }
+.auth-panel__signed-in p { margin: 0.25rem 0 0; }
+.auth-panel__status { display: grid; width: 2.3rem; height: 2.3rem; place-items: center; border-radius: 50%; background: #2f7043; color: white; font-weight: 700; }
+@media (max-width: 480px) { .auth-panel { border-radius: 1rem; } .auth-panel__links { display: grid; gap: 0.75rem; } }
