@@ -55,8 +55,7 @@ export function BookingReference() {
           <div className="booking-reference__journey" role="group" aria-label="Booking identity">
             <button
               type="button"
-              role="tab"
-              aria-selected={journey === "guest"}
+              aria-pressed={journey === "guest"}
               className={journey === "guest" ? "is-active" : ""}
               onClick={() => setJourney("guest")}
             >
@@ -64,8 +63,7 @@ export function BookingReference() {
             </button>
             <button
               type="button"
-              role="tab"
-              aria-selected={journey === "account"}
+              aria-pressed={journey === "account"}
               className={journey === "account" ? "is-active" : ""}
               onClick={() => setJourney("account")}
             >
