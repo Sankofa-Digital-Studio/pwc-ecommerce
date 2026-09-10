@@ -29,7 +29,15 @@ export function AuthPanel() {
     try {
       const supabase = getSupabaseBrowserClient();
       void supabase.auth.getSession().then(({ data }) => { if (active) setUser(data.session?.user ?? null); });
-      const authState = supabase.auth.onAuthStateChange((_event, session) => { if (active) setUser(session?.user ?? null); });
+      const authState = supabase.auth.onAuthStateChange((event, session) => {
+        if (active) {
+          if (event === "PASSWORD_RECOVERY") {
+            setMode("update-password");
+            setMessage("Choose a new password to finish recovery.");
+          }
+          setUser(session?.user ?? null);
+        }
+      });
       subscription = authState.data.subscription;
     } catch (caught) {
       window.setTimeout(() => { if (active) setError(caught instanceof Error ? caught.message : "Authentication is not configured."); }, 0);
@@ -90,7 +98,7 @@ export function AuthPanel() {
     setBusy(false);
   }
 
-  if (user) {
+  if (user && mode !== "update-password") {
     return (
       <section className="auth-panel" aria-labelledby="account-title">
         <div className="auth-panel__intro">
