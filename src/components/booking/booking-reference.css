@@ -1,0 +1,390 @@
+.booking-reference {
+  display: grid;
+  gap: 2rem;
+  max-width: 88rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 5rem) 1.5rem 5rem;
+  color: var(--phekong-ink);
+}
+
+.booking-reference__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--phekong-border);
+}
+
+.booking-reference__eyebrow {
+  margin: 0;
+  color: var(--phekong-accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.booking-reference h1,
+.booking-reference h2,
+.booking-reference p {
+  margin-top: 0;
+}
+
+.booking-reference h1 {
+  max-width: 11ch;
+  margin-bottom: 1rem;
+  font-family: var(--phekong-font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+}
+
+.booking-reference__lede {
+  max-width: 55ch;
+  margin-bottom: 0;
+  color: var(--phekong-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.booking-reference__proof {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 13rem;
+  color: var(--phekong-muted);
+  font-size: 0.85rem;
+}
+
+.booking-reference__proof span {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--phekong-border);
+}
+
+.booking-reference__workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.booking-reference__form-column,
+.booking-reference__summary {
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-reference__journey {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  border: 1px solid var(--phekong-border);
+  border-radius: var(--phekong-radius-pill);
+  background: var(--phekong-surface-2);
+}
+
+.booking-reference__journey button,
+.booking-reference__state-controls button {
+  border: 0;
+  border-radius: var(--phekong-radius-pill);
+  color: var(--phekong-muted);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.booking-reference__journey button {
+  flex: 1;
+  min-height: 2.7rem;
+  padding: 0.55rem 1rem;
+}
+
+.booking-reference__journey button.is-active,
+.booking-reference__state-controls button[aria-pressed="true"] {
+  color: var(--phekong-footer-text);
+  background: var(--phekong-brand-strong);
+}
+
+.booking-reference__panel,
+.booking-reference__summary {
+  padding: 1.25rem;
+  border: 1px solid var(--phekong-border);
+  border-radius: var(--phekong-radius-lg);
+  background: var(--phekong-surface);
+  box-shadow: var(--phekong-card-shadow);
+}
+
+.booking-reference__step {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.booking-reference__step > span {
+  display: grid;
+  flex: 0 0 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--phekong-brand-strong);
+  background: var(--phekong-accent-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.booking-reference__label {
+  margin-bottom: 0.2rem;
+  font-weight: 750;
+}
+
+.booking-reference__hint {
+  margin-bottom: 0;
+  color: var(--phekong-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.booking-reference__service-list,
+.booking-reference__fields {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.booking-service {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.9rem;
+  border: 1px solid var(--phekong-border);
+  border-radius: var(--phekong-radius-md);
+  cursor: pointer;
+}
+
+.booking-service.is-selected {
+  border-color: var(--phekong-brand);
+  background: var(--phekong-accent-soft);
+}
+
+.booking-service input {
+  margin-top: 0.25rem;
+  accent-color: var(--phekong-brand);
+}
+
+.booking-service span {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.booking-service small {
+  color: var(--phekong-muted);
+  line-height: 1.4;
+}
+
+.booking-reference__field {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--phekong-muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.booking-reference__field input {
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--phekong-border);
+  border-radius: var(--phekong-radius-sm);
+  color: var(--phekong-ink);
+  background: var(--phekong-bg);
+  font: inherit;
+}
+
+.booking-reference__field input:focus-visible,
+.booking-reference button:focus-visible,
+.booking-reference a:focus-visible {
+  outline: 3px solid var(--phekong-focus);
+  outline-offset: 3px;
+}
+
+.booking-reference__slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.booking-reference__slots button {
+  min-height: 2.8rem;
+  border: 1px solid var(--phekong-border);
+  border-radius: var(--phekong-radius-sm);
+  color: var(--phekong-ink);
+  background: var(--phekong-surface);
+  cursor: pointer;
+}
+
+.booking-reference__slots button.is-selected {
+  border-color: var(--phekong-brand);
+  color: var(--phekong-footer-text);
+  background: var(--phekong-brand-strong);
+}
+
+.booking-reference__submit {
+  min-height: 3.25rem;
+  border: 0;
+  border-radius: var(--phekong-radius-pill);
+  color: var(--phekong-footer-text);
+  background: var(--phekong-brand-strong);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.booking-reference__scope {
+  margin: 0;
+  color: var(--phekong-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.booking-reference__summary {
+  position: sticky;
+  top: 6rem;
+  gap: 1.25rem;
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--phekong-accent) 18%, transparent), transparent 40%),
+    var(--phekong-footer-bg);
+  color: var(--phekong-footer-text);
+}
+
+.booking-reference__summary-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.booking-reference__summary .booking-reference__eyebrow {
+  color: var(--phekong-accent);
+}
+
+.booking-reference__status {
+  align-self: start;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--phekong-accent) 40%, transparent);
+  border-radius: var(--phekong-radius-pill);
+  color: var(--phekong-accent-soft);
+  font-size: 0.72rem;
+}
+
+.booking-reference__summary h2 {
+  margin-bottom: 0;
+  font-family: var(--phekong-font-display);
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+.booking-reference__summary dl {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+}
+
+.booking-reference__summary dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--phekong-footer-text) 16%, transparent);
+}
+
+.booking-reference__summary dt {
+  color: var(--phekong-footer-muted);
+}
+
+.booking-reference__summary dd {
+  margin: 0;
+  text-align: right;
+}
+
+.booking-reference__state {
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--phekong-accent) 24%, transparent);
+  border-radius: var(--phekong-radius-md);
+  background: color-mix(in srgb, var(--phekong-footer-text) 6%, transparent);
+}
+
+.booking-reference__state strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.booking-reference__state p {
+  margin-bottom: 0;
+  color: var(--phekong-footer-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.booking-reference__state--success {
+  border-color: var(--phekong-accent);
+}
+
+.booking-reference__state-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.booking-reference__state-controls button {
+  padding: 0.45rem 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--phekong-footer-text) 18%, transparent);
+  color: var(--phekong-footer-muted);
+  font-size: 0.75rem;
+}
+
+.booking-reference__back {
+  color: var(--phekong-accent-soft);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 56rem) {
+  .booking-reference__intro,
+  .booking-reference__workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-reference__summary {
+    position: static;
+  }
+}
+
+@media (max-width: 38rem) {
+  .booking-reference {
+    padding-inline: 1rem;
+  }
+
+  .booking-reference h1 {
+    font-size: clamp(2.8rem, 15vw, 4.4rem);
+  }
+
+  .booking-reference__slots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-reference__journey {
+    border-radius: var(--phekong-radius-md);
+  }
+
+  .booking-reference__journey button {
+    flex-basis: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-reference * {
+    scroll-behavior: auto;
+  }
+}
