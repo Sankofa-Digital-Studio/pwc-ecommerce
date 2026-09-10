@@ -32,7 +32,7 @@ export function AuthPanel() {
       const authState = supabase.auth.onAuthStateChange((_event, session) => { if (active) setUser(session?.user ?? null); });
       subscription = authState.data.subscription;
     } catch (caught) {
-      if (active) setError(caught instanceof Error ? caught.message : "Authentication is not configured.");
+      window.setTimeout(() => { if (active) setError(caught instanceof Error ? caught.message : "Authentication is not configured."); }, 0);
     }
     const params = new URLSearchParams(window.location.search);
     if (params.get("verified") === "1") setMessage("Your email is verified. You can now sign in.");
