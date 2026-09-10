@@ -191,6 +191,6 @@ export function BookingReference() {
           <Link className="booking-reference__back" href="/services">Need guidance first? Explore services</Link>
         </aside>
       </section>
-    </main>
+    </section>
   );
 }
