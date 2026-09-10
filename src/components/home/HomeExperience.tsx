@@ -31,7 +31,10 @@ export function HomeExperience() {
           <p className="home-experience__lede">{wellnessThemeContent.hero.description}</p>
           <p className="home-experience__lede">{wellnessThemeContent.brandStory}</p>
           <div className="home-experience__actions">
-            <Link className="home-experience__cta" href="/products">
+            <Link className="home-experience__cta" href="/booking">
+              Book a service
+            </Link>
+            <Link className="home-experience__secondary" href="/products">
               Shop best sellers
             </Link>
             <Link className="home-experience__secondary" href="/services">
