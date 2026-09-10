@@ -176,10 +176,9 @@ export function BookingReference() {
           </dl>
 
           <div className={`booking-reference__state booking-reference__state--${previewState}`}>
-                        <>
-              <strong>{previewCopy[previewState].title}</strong>
+            <strong>{previewCopy[previewState].title}</strong>
               <p>{previewCopy[previewState].body}</p>
-            </>}
+
           </div>
 
           <div className="booking-reference__state-controls" aria-label="Reference state previews">
