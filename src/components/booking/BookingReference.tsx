@@ -16,16 +16,25 @@ const services = [
 
 const slots = ["09:00", "10:30", "13:00", "15:30"];
 
+const previewCopy: Record<PreviewState, { title: string; body: string }> = {
+  ready: { title: "Ready for availability check", body: "Choose a service, time and contact path before the booking contract is connected." },
+  loading: { title: "Checking current availability", body: "The production flow will ask the server for current availability before presenting a confirmation." },
+  empty: { title: "No suitable times found", body: "The production flow should offer another date or a clear human follow-up path without implying a reservation." },
+  conflict: { title: "That time is no longer available", body: "The production flow preserves the customer’s details and offers current replacement slots." },
+  error: { title: "Availability could not be checked", body: "The production flow should explain the retry path without losing the customer’s selection." },
+  success: { title: "Availability can be reviewed", body: "The next production step must verify this selection against the server before confirming it." },
+};
+
 export function BookingReference() {
   const [journey, setJourney] = useState<Journey>("guest");
   const [service, setService] = useState<ServiceId>(services[0].id);
   const [slot, setSlot] = useState(slots[1]);
   const [previewState, setPreviewState] = useState<PreviewState>("ready");
 
-  const selectedService = services.find((item) => item.id === service) ?? services[0];
+  const selectedService = services.find((item) => item.id === service) ?? services[0];\n  const formattedDate = new Intl.DateTimeFormat("en-ZA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
 
   return (
-    <main className="booking-reference" id="main-content">
+    <section className="booking-reference">
       <section className="booking-reference__intro" aria-labelledby="booking-title">
         <div>
           <p className="booking-reference__eyebrow">A considered next step</p>
@@ -43,7 +52,7 @@ export function BookingReference() {
 
       <section className="booking-reference__workspace" aria-label="Booking reference flow">
         <div className="booking-reference__form-column">
-          <div className="booking-reference__journey" role="tablist" aria-label="Booking identity">
+          <div className="booking-reference__journey" role="group" aria-label="Booking identity">
             <button
               type="button"
               role="tab"
@@ -101,7 +110,7 @@ export function BookingReference() {
             </div>
             <label className="booking-reference__field">
               <span>Date</span>
-              <input type="date" defaultValue="2026-09-21" aria-label="Preferred date" />
+              <input type="date" value={date} onChange={(event) => setDate(event.target.value)} aria-label="Preferred date" />
             </label>
             <div className="booking-reference__slots" aria-label="Available times">
               {slots.map((item) => (
@@ -161,7 +170,7 @@ export function BookingReference() {
           </div>
           <h2>{selectedService.name}</h2>
           <dl>
-            <div><dt>Date</dt><dd>21 September 2026</dd></div>
+            <div><dt>Date</dt><dd>{formattedDate}</dd></div>
             <div><dt>Time</dt><dd>{slot}</dd></div>
             <div><dt>Path</dt><dd>{journey === "guest" ? "Guest booking" : "Account booking"}</dd></div>
           </dl>
