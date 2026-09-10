@@ -176,17 +176,7 @@ export function BookingReference() {
           </dl>
 
           <div className={`booking-reference__state booking-reference__state--${previewState}`}>
-            {previewState === "success" ? (
-              <>
-                <strong>Availability can be reviewed</strong>
-                <p>The next production step must verify this selection against the server before confirming it.</p>
-              </>
-            ) : (
-              <>
-                <strong>Ready for availability check</strong>
-                <p>Choose a service, time and contact path before the booking contract is connected.</p>
-              </>
-            )}
+                        <>\n              <strong>{previewCopy[previewState].title}</strong>\n              <p>{previewCopy[previewState].body}</p>\n            </>}
           </div>
 
           <div className="booking-reference__state-controls" aria-label="Reference state previews">
