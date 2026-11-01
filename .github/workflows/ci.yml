@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: 24
           cache: npm
@@ -36,7 +36,7 @@ jobs:
       - name: Build static Storybook
         run: npm run build-storybook
       - name: Cypress homepage smoke
-        uses: cypress-io/github-action@09090944bd8aaa2a517cefb6e38bf1aae336b42b
+        uses: cypress-io/github-action@4ce68f262a3888d22cf3175d62010a145ba737ee
         with:
           start: npm run dev
           wait-on: http://127.0.0.1:3000
@@ -48,7 +48,7 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: 24
           cache: npm
